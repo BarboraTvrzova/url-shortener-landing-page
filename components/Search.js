@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Search.module.scss";
 
 const Search = () => {
@@ -23,8 +23,6 @@ const Search = () => {
         console.log(err);
       });
   };
-
-  console.log(linksObject);
 
   return (
     <>
@@ -66,19 +64,39 @@ const Search = () => {
 export default Search;
 
 const ShortLinks = ({ links }) => {
+  const [clipboardText, setClipboardText] = useState("");
+
+  useEffect(() => {
+    getClipboardText();
+  }, [clipboardText]);
+
+  const getClipboardText = async () => {
+    const clipboard = await navigator.clipboard.readText();
+    setClipboardText(clipboard);
+  };
+
   const linksList = links.map((link) => {
+    let text = clipboardText;
+    getClipboardText();
     return (
-      <div className={`${styles.shortLink}`}>
+      <div className={`${styles.shortLink}`} key={link.shortLink}>
         <div className={styles.shortLink_original}>{link.originalLink}</div>
         <div className={styles.shortLink_new}>{link.shortLink}</div>
         <div className={styles.shortLink_copy_wraper}>
           <button
-            className={` btn ${styles.shortLink_copy}`}
-            onClick={() => {
-              navigator.clipboard.writeText(link.shortLink);
+            value={link.shortLink}
+            className={
+              text === link.shortLink
+                ? `btn ${styles.shortLink_copy} ${styles.shortLink_copy_copied}`
+                : `btn ${styles.shortLink_copy}`
+            }
+            onClick={(e) => {
+              navigator.clipboard.writeText(e.target.value);
+              text = link.shortLink;
+              setClipboardText(text);
             }}
           >
-            Copy
+            {text === link.shortLink ? "Copied" : "Copy"}
           </button>
         </div>
       </div>

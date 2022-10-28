@@ -1,0 +1,124 @@
+.hero_wraper {
+  width: 100%;
+  min-height: calc(100vh - 9.6rem);
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 9.4rem;
+
+  @media (min-width: 1024px) {
+    min-height: calc(100vh - 16.6rem);
+    position: relative;
+  }
+
+  .hero {
+    width: 100%;
+    min-height: calc(100vh - 9.6rem);
+    height: 100%;
+
+    @media (min-width: 1024px) {
+      min-height: unset;
+    }
+
+    &_image {
+      width: 100%;
+      position: relative;
+      height: 48vh;
+      min-height: 33.7rem;
+
+      @media (min-width: 1024px) {
+        order: 2;
+        height: 55vh;
+        min-height: 48.2rem;
+        position: unset;
+        max-height: calc(100vh - 166px);
+      }
+
+      img {
+        width: 49.8rem;
+        height: auto;
+        position: absolute;
+        top: 0;
+        min-width: calc(100vw + 12rem);
+        min-height: 33.7rem;
+        max-height: 50vh;
+        display: block;
+        z-index: 99;
+
+        @media (min-width: 1024px) {
+          max-height: 60.3vh;
+          min-width: 60vw;
+          right: -13rem;
+        }
+      }
+    }
+    &_content {
+      min-height: 40vh;
+      max-width: 45rem;
+      height: clamp(28.9rem, 48vh, 35rem);
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      justify-content: center;
+      text-align: center;
+      z-index: 9999;
+      position: relative;
+
+      @media (min-width: 1024px) {
+        order: 1;
+        max-width: 56.4rem;
+        text-align: left;
+        justify-content: unset;
+        padding-top: 6.1rem;
+        padding-top: clamp(6.1rem, 7.625vh, 9rem);
+        margin: unset;
+      }
+      h1 {
+        font-weight: 700;
+        font-size: 4.2rem;
+        line-height: 114%;
+        letter-spacing: -1.05px;
+        color: #34313d;
+        margin-bottom: 1.5rem;
+
+        @media (min-width: 1024px) {
+          font-size: 8rem;
+          font-size: clamp(5.6rem, 10vh, 8rem);
+          line-height: 112%;
+          letter-spacing: -2px;
+          margin-bottom: 0.5rem;
+        }
+      }
+      p {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 167%;
+        letter-spacing: 0.122727px;
+        color: #9e9aa8;
+        margin-bottom: 3.2rem;
+
+        @media (min-width: 1024px) {
+          font-size: 2.2rem;
+          line-height: 167%;
+          margin-bottom: 3.8rem;
+        }
+      }
+      button {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 3rem;
+        color: #fff;
+        padding: 1.4rem 4rem 1.2rem;
+        display: block;
+        margin: 0 auto;
+
+        @media (min-width: 1024px) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    @media (min-width: 1024px) {
+      display: flex;
+    }
+  }
+}

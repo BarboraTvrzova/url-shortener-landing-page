@@ -1,0 +1,56 @@
+html,
+body,
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 10px;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+
+  @media (min-width: 1440px) {
+    font-size: (10 / 1440) * 100vw;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.inner-container {
+  padding: 0 2.4rem;
+  max-width: 115.8rem;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  background: #2bd0d0;
+  border-radius: 2.8rem;
+  &:hover {
+    background: #9ae3e3;
+    cursor: pointer;
+  }
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 9.6rem);
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}

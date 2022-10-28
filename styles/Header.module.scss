@@ -1,0 +1,119 @@
+.header {
+  padding-top: 4rem;
+  padding-bottom: 2.3rem;
+  position: relative;
+
+  @media (min-width: 1024px) {
+    padding-top: 4.8rem;
+    padding-bottom: 7.8rem;
+    padding-bottom: clamp(2.3rem, 9.75vh, 7.8rem);
+    display: flex;
+  }
+
+  &_svgs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.3rem;
+
+    @media (min-width: 1024px) {
+      width: 12rem;
+      margin-right: 4.5rem;
+      height: 4rem;
+    }
+    &_logo {
+      height: 4rem;
+      svg {
+        width: 12rem;
+        height: 4rem;
+      }
+    }
+
+    &_nav {
+      @media (min-width: 1024px) {
+        display: none;
+      }
+    }
+  }
+
+  &_nav {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    padding: 4rem 2.4rem;
+    text-align: center;
+    background: #3a3054;
+    border-radius: 10px;
+    color: #fff;
+    z-index: 999;
+    position: absolute;
+    top: 9.6rem;
+    width: calc(100% - 4.8rem);
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+    &_links li {
+      margin-bottom: 3rem;
+    }
+
+    &_login {
+      border-top: 1px solid #9e9aa8;
+      padding-top: 3.2rem;
+
+      li {
+        margin-bottom: 2.4rem;
+        &:last-of-type {
+          margin-bottom: unset;
+        }
+      }
+      &_signUp {
+        padding: 1.2rem 0 0.9rem;
+        max-width: 27.9rem;
+        margin: 0 auto;
+      }
+    }
+  }
+  &_nav_large {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    color: #9e9aa8;
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &_links {
+      display: flex;
+      width: 26.5rem;
+      justify-content: space-between;
+      align-items: center;
+
+      li:hover {
+        color: #34313d;
+        cursor: pointer;
+      }
+    }
+    &_login {
+      display: flex;
+      align-items: center;
+      li:hover {
+        color: #34313d;
+        cursor: pointer;
+      }
+      &_signUp {
+        margin-left: 3.7rem;
+        padding: 0.9rem 2.4rem;
+        color: #fff;
+      }
+    }
+  }
+}
